@@ -155,16 +155,16 @@ BoldItalicFont=texgyreheros-bolditalic.otf
 %%%%%%%%%%%%%%%%%%%%
 % List environment %
 %%%%%%%%%%%%%%%%%%%%
-
+\RequirePackage{supertabular,longtable}
 \setlength{\tabcolsep}{0pt}
 \newenvironment{entrylist}{%
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
-}{%
-  \end{tabular*}
+  \begin{supertabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+}{
+  \end{supertabular*}
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[4]{%
-  #1&\parbox[t]{11.8cm}{%
+  \parbox[t]{2cm}{#1}&\parbox[t]{11.8cm}{%
     \textbf{#2}%
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
